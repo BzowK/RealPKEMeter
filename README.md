@@ -13,7 +13,8 @@ The goal of this project is to create a working PKE Meter (Ghostbusters) which i
 - Buzzer reflecting signal strength
 - OLED display showing exact EMF reading, temperature, & humidity
 
-Included is the initial breadboard layout which I'm currently testing.  The only addition I'm currently considering is a rocker switch to adjust sensitivity, however may try to add that via OLED screen.
+Included (& below) is the initial breadboard layout which I'm currently testing.  The only addition I'm currently considering is a rocker switch to adjust sensitivity, however may try to add that via OLED screen.
+![](https://github.com/BzowK/RealPKEMeter/blob/master/Fritzing/Real-PKE-Meter_bb.png)
 
 ## Parts ##
 *Links to exact parts used will be posted once prototype is complete*
