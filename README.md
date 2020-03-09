@@ -5,7 +5,7 @@
 The goal of this project is to create a working PKE Meter (Ghostbusters) which is similar to the original's design however offers the below features:
 
 ## Current Status ##
-3/10/20 - I have all parts assembled on breadboard, model printed, plus separate code which successfully operates individual components.  All that's left is combining code into single script then trying to fit everything into model.  Model files are currently from [CountDeMonet's project](https://github.com/CountDeMonet/Arduino_PKE_Meter), but may have to modify eventually.
+**3/10/20** - I have all parts assembled on breadboard, model printed, plus separate code which successfully operates individual components.  All that's left is combining code into single script then trying to fit everything into model.  Model files are currently from [CountDeMonet's project](https://github.com/CountDeMonet/Arduino_PKE_Meter), but may have to modify eventually.
 
 ## Features ##
 - EMF Meter (LED Wings raise on stronger signal)
@@ -13,7 +13,7 @@ The goal of this project is to create a working PKE Meter (Ghostbusters) which i
 - Buzzer reflecting signal strength
 - OLED display showing exact EMF reading, temperature, & humidity
 
-Included (& below) is the initial breadboard layout which I'm currently testing.  The only addition I'm currently considering is a rocker switch to adjust sensitivity, however may try to add that via OLED screen.
+Included *(& below)* is the initial breadboard layout which I'm currently testing.  The only addition I'm currently considering is a rocker switch to adjust sensitivity, however may try to add that via OLED screen.
 ![](https://github.com/BzowK/RealPKEMeter/blob/master/Fritzing/Real-PKE-Meter_bb.png)
 
 ## Parts ##
