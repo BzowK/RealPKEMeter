@@ -1,6 +1,6 @@
 # Real PKE Meter #
 
-*This project is currently under development*
+*This project is currently under development.  All components have been individually tested, however the final prototype has not been completed yet*
 
 The goal of this project is to create a working PKE Meter (Ghostbusters) which is similar to the original's design however offers the below features:
 
@@ -19,17 +19,19 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 ## Parts ##
 *Links to exact parts used will be posted once prototype is complete*
 
-- Arduino Nano
-- DHT22 Sensor
-- Servo *(I used an SG90S)*
+- x1 Arduino Nano
+- x1 DHT22 Sensor
+- x1 Servo *(I used an SG90S)*
 - x14 3mm LEDs
-- Piezo Speaker
-- 0.96" OLED Display
+- x1 Piezo Speaker
+- x1 0.96" OLED Display
 - x8 100ohm Resistors
 - x2 Buttons (Push)
 - x2 Toggle Switches (For Power / Sound)
 - 5V Power Source (I am currently testing with rechargeable battery + Powerboost 500)
 - 3D Printer *(I use an Ender 3 Pro with PLA)*
+- Wiring
+- Custom PCB *(Optional - Will post if one is made)*
 
 ## Credit ##
 This project is inspired by CountDeMonet's [Arduino_PKE_Meter](https://github.com/CountDeMonet/Arduino_PKE_Meter) which includes an OLED and LED wings, however was designed as a toy as all feedback is pre-programmed to occur with button presses and does not include sensors.
