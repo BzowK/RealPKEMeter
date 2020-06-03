@@ -27,15 +27,18 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 
 - x1 Arduino Nano
 - x1 DHT22 Sensor
-- x1 Servo *(I used an SG90S)*
-- x14 3mm LEDs
+- x1 SG90S Servo
+- x14 3mm LEDs (20ma)
 - x1 Piezo Speaker
 - x1 0.96" OLED Display
-- x8 100ohm Resistors
-- x2 Buttons (Push)
-- x2 Toggle Switches (For Power / Sound)
+- x9 330ohm Resistors
+- x2 1M Resistors
+- x1 Rotary Encoder /w Push Button
+- x1 SPDT Toggle Switch
+- x1 Powerboost 500
+- x1 18650 Battery
 - 5V Power Source (I am currently testing with rechargeable battery + Powerboost 500)
-- 3D Printer *(I use an Ender 3 Pro with PLA)*
+- 3D printed parts
 - Wiring
 - Custom PCB *(Optional - Will post if one is made)*
 
