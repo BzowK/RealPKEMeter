@@ -37,7 +37,6 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 - x1 SPDT Toggle Switch
 - x1 Powerboost 500
 - x1 18650 Battery
-- 5V Power Source (I am currently testing with rechargeable battery + Powerboost 500)
 - 3D printed parts
 - Wiring
 - Custom PCB *(Optional - Will post if one is made)*
