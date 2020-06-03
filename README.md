@@ -5,6 +5,7 @@
 The goal of this project is to create a working PKE Meter (Ghostbusters) which is similar to the original's design however offers the below features:
 
 ## Current Status ##
+**6/3/20** - Have all main components working via script and am printing revised case so all components fit correctly. Just updated the Fritzing diagram as well as Arduino IDE script in repo.  Will upload STLs for case once finished, assembled, and tested.  Only pending tasks are to fine-tune EMF detection in script, integrate menu options to mute & adjust sensitivity, and few smaller things.  Will post full build guide and files once finished.
 **3/10/20** - I've tested individual components using source code which I combined into the final code (Real-PKE-Meter.ino).  All that's left is to test individual components using final code, program OLED display as desired, then fit into model.  Model files are currently copies of [CountDeMonet's project](https://github.com/CountDeMonet/Arduino_PKE_Meter), but will probably have to modify due to added components.
 
 ## Features ##
