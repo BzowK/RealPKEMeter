@@ -6,6 +6,7 @@ The goal of this project is to create a working PKE Meter (Ghostbusters) which i
 
 ## Current Status ##
 **6/3/20** - Have all main components working via script and am printing revised case so all components fit correctly. Just updated the Fritzing diagram as well as Arduino IDE script in repo.  Will upload STLs for case once finished, assembled, and tested.  Also decided to replace pair of buttons with a rotary encoder with push-button for more flexibility.  Pending tasks are below:
+
 - Fine-tune EMF detection in script
 - Integrate rotary encoder with push-button + menu options (mute, adjust sensitivity, etc)
 - Finish updating case
