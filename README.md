@@ -1,8 +1,8 @@
 # Real PKE Meter #
 
-*This project is currently under development.  All components have been individually tested, however the final prototype has not been completed yet*
+*This project is currently under development*
 
-The goal of this project is to create a working PKE Meter (Ghostbusters) which is similar to the original's design however offers the below features:
+The goal of this project is to create a "working" PKE Meter (Ghostbusters) which is similar to the original's design however offers the below features:
 
 ## Current Status ##
 **6/3/20** - Have all main components working via script and am printing revised case so all components fit correctly. Just updated the Fritzing diagram as well as Arduino IDE script in repo.  Will upload STLs for case once finished, assembled, and tested.  Also decided to replace pair of buttons with a rotary encoder with push-button for more flexibility.  Pending tasks are below:
