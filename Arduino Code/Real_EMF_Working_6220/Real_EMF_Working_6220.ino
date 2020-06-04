@@ -2,7 +2,11 @@
 //Revised 6/4/20 - BDK
 
 //ToDo
-// Add menu options to adjust sound & sensitivity
+// Test Encoder
+// Add menu with following options
+// - Mute / unmute
+// - Adjust EMF sensitivity
+// - 
 
 // Pin Assignments
 // vin/gnd - to power
