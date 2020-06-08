@@ -1,5 +1,8 @@
 //Real PKE Meter
-//Revised 6/4/20 - BDK
+//Revised 6/6/20 - BDK
+
+// Current State
+// Still has old display + menu sample
 
 //ToDo
 // Test Encoder
@@ -14,7 +17,7 @@
 // A0 - Probe / Antenna
 // A4 - SDA on Display
 // A5 - SLC on Display
-// D1 - Rotary Encoder (Knob)
+// D1 - Rotary Encoder (Knob) (TX1)
 // D2 - Rotary Encoder
 // D3 - Rotary Encoder
 // D4 - LED pair #1
@@ -33,6 +36,7 @@
   #include <Adafruit_SSD1306.h>
   #include <Servo.h>
   #include <DHT.h>
+  #include <Wire.h>
 
 // Define Variables
   #define DHTPIN 13
@@ -41,7 +45,20 @@
   #define OLED_RESET 10
   #define SCREEN_WIDTH 128
   #define SCREEN_HEIGHT 64
+  #define encoder0PinA  2 // D2
+  #define encoder0PinB  3 // D3
+  #define encoderButton 1 // TX1
 
+// Init Init Rotoary Encoder + Button
+  volatile unsigned int encoder0Pos = 0;
+  int valA;
+  int valB;
+  int valC;
+  byte clk;
+  byte menuCount = 1;
+  byte dir = 0;
+  bool runState = false;
+  
 // Init OLED
   Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
@@ -73,16 +90,6 @@
   int total = 0;
   int average = 0;
   int currentVal = 0;
-
-// Init Rotoary Encoder + Button
-  int encoderPin1 = 2;
-  int encoderPin2 = 3;
-  int encoderSwitchPin = 1;
-  volatile int lastEncoded = 0;
-  volatile long encoderValue = 0;
-  long lastencoderValue = 0;
-  int lastMSB = 0;
-  int lastLSB = 0;
 
 void setup() {
 // Setup Serial
@@ -117,14 +124,13 @@ void setup() {
   display.setTextColor(WHITE);
 
 //Setup Rotary Encoder + Button
-  pinMode(encoderPin1, INPUT);
-  pinMode(encoderPin2, INPUT);
-  pinMode(encoderSwitchPin, INPUT);
-  digitalWrite(encoderPin1, HIGH);
-  digitalWrite(encoderPin2, HIGH);
-  digitalWrite(encoderSwitchPin, HIGH);
-  attachInterrupt(0, updateEncoder, CHANGE);
-  attachInterrupt(1, updateEncoder, CHANGE);
+  attachInterrupt(0, doEncoder, CHANGE);  // encoder pin on interrupt 0 - pin 2
+  pinMode(encoder0PinA, INPUT);
+  digitalWrite(encoder0PinA, HIGH); // turn on pull-up resistor
+  pinMode(encoder0PinB, INPUT);
+  digitalWrite(encoder0PinB, HIGH); // turn on pull-up resistor
+  pinMode(encoderButton, INPUT);
+  digitalWrite(encoderButton, HIGH); // turn on pull-up resistor
 }
   
 void loop() {
@@ -168,14 +174,9 @@ void loop() {
   display.setCursor(22, 5);
   
 // Loop Rotary Encoder + Button
-  //Do stuff here
-  if(digitalRead(encoderSwitchPin)){
-  //button is not being pushed
-  }else{
-  //button is being pushed
-  }
-  Serial.println(encoderValue);
-  delay(1000); //just here to slow down the output, and show it will work even during a delay
+  clk = digitalRead(encoderButton);
+  menuCheck();
+  staticMenu();
 
 // Loop OLED
   // Static Title
@@ -214,8 +215,87 @@ void servoControl(){
   Serial.println(servoVal); 
  }
 
-void updateEncoder(){
-  int MSB = digitalRead(encoderPin1); //MSB = most significant bit
-  int LSB = digitalRead(encoderPin2); //LSB = least significant bit
-  int encoded = (MSB << 1) |LSB; //converting the 2 pin value to single number int sum = (lastEncoded << 2) | encoded; //adding it to the previous encoded value if(sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) encoderValue ++; if(sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) encoderValue --; lastEncoded = encoded; //store this value for next time }
- }
+void staticMenu() {
+  display.setTextSize(2);
+  display.setTextColor(WHITE);
+
+  display.setCursor(10, 0);
+  display.println("yyRobotic");
+  //---------------------------------
+  display.setTextSize(1);
+  display.setCursor(10, 20);
+  display.println("Value A:");
+  display.setCursor(60, 20);
+  display.println(valA);
+
+  display.setCursor(10, 30);
+  display.println("Value B:");
+  display.setCursor(60, 30);
+  display.println(valB);
+
+  display.setCursor(10, 40);
+  display.println("Value C:");
+  display.setCursor(60, 40);
+  display.println(valC);
+
+  display.setCursor(10, 50);
+  display.println("Start:");
+  display.setCursor(45, 50);
+  if (encoder0Pos > 5 && menuCount == 4) {
+    display.println("Run!");
+    runState = true;
+  } else {
+    display.println("Idle");
+    runState = false;
+  }
+  display.setCursor(2, (menuCount * 10) + 10);
+  display.println(">");
+
+  display.display();
+}
+
+void menuCheck() {
+  if (clk == LOW && menuCount < 5) {
+    menuCount++;
+    encoder0Pos = 0;
+  }
+  if (clk == LOW && menuCount >= 5) {
+    menuCount = 1;
+  }
+
+  if (menuCount == 1) {
+    valA = encoder0Pos;
+  }
+  if (menuCount == 2) {
+    valB = encoder0Pos;
+  }
+  if (menuCount == 3) {
+    valC = encoder0Pos;
+  }
+}
+
+void doEncoder() {
+  if (digitalRead(encoder0PinA) == HIGH) {
+    if (digitalRead(encoder0PinB) == LOW && encoder0Pos > 0) {
+      encoder0Pos = encoder0Pos - 1;
+      dir = 0;
+    }
+    else {
+      encoder0Pos = encoder0Pos + 1;
+      dir = 1;
+    }
+  }
+  else
+  {
+    if (digitalRead(encoder0PinB) == LOW ) {
+      encoder0Pos = encoder0Pos + 1;
+      dir = 1;
+    }
+    else {
+      if (encoder0Pos > 0) {
+        encoder0Pos = encoder0Pos - 1;
+        dir = 0;
+      }
+    }
+  }
+}
