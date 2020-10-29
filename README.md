@@ -13,7 +13,7 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 ![](https://github.com/BzowK/RealPKEMeter/blob/master/Fritzing/Real-PKE-Meter_bb.png)
 
 ## Current Status - 10/29/20 ##
-**10/29/20** - Finished prototype #1.  Didn't have time to get everything working the way I wanted, so finished it without a couple of features and with a couple of modifications so i could finish testing.  Below are lists of modifications made to finish first prototype plus changes planned for prototype #2 after testing...
+Finished prototype #1.  Didn't have time to get everything working the way I wanted, so finished it without a couple of features and with a couple of modifications so i could finish testing.  Below are lists of modifications made to finish first prototype plus changes planned for prototype #2 after testing...
 
 **1st Prototype Modifications**
 
