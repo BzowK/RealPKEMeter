@@ -27,8 +27,8 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 **Notes**
 
 - The 1st prototype was printed in white I had abundance of then spray painted so apologies for rough look.  2nd prototype will use filament in correct color instead 
-- *The "Model/Modified" folder contains the 115% models with 5mm LEDs.  For model parts not included in this folder, load the "Model/Original" version in slicer and scale up 115%*
-
+- The "Model/Modified-115_5mm" folder contains the 115% models with 5mm LEDs
+- Placed switches after model print so had to cut space out for them manually
 
 **Changes Currently Being Considered for Prototype #2**
 
@@ -39,6 +39,7 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 - LED animation - *Example: Have them scan top to bottom slowly and get faster depending on signal strength*
 - Add external USB port for charging and/or Arduino programming
 - Considering alternative power source with smaller footprint
+- Clean up & fine-tune model for proper hardware mounting, switches, etc.
 
 ## Old Updates ##
 **6/3/20** - Have all main components working via script and am printing revised case so all components fit correctly. Just updated the Fritzing diagram as well as Arduino IDE script in repo.  Will upload STLs for case once finished, assembled, and tested.  Also decided to replace pair of buttons with a rotary encoder with push-button for more flexibility.  Pending tasks are below:
