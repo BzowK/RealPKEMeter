@@ -12,7 +12,7 @@ The goal of this project is to create a "working" PKE Meter (Ghostbusters) which
 Included *(& below)* is the initial breadboard layout which I'm currently testing.  The only addition I'm currently considering is a rocker switch to adjust sensitivity, however may try to add that via OLED screen.
 ![](https://github.com/BzowK/RealPKEMeter/blob/master/Fritzing/Real-PKE-Meter_bb.png)
 
-## Current Status - 10/29/20##
+## Current Status - 10/29/20 ##
 **10/29/20** - Finished prototype #1.  Didn't have time to get everything working the way I wanted, so finished it without a couple of features and with a couple of modifications so i could finish testing.  Below are lists of modifications made to finish first prototype plus changes planned for prototype #2 after testing...
 
 **1st Prototype Modifications**
@@ -24,7 +24,11 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 - Added physical switch to mute piezo speaker (since no menu option)
 - Added 18650 battery case in handle
 
-*The "Model/Modified" folder contains the 115% models with 5mm LEDs.  For model parts not included in this folder, load the "Model/Original" version in slicer and scale up 115%*
+**Notes**
+
+- The 1st prototype was printed in white I had abundance of then spray painted so apologies for rough look.  2nd prototype will use filament in correct color instead 
+- *The "Model/Modified" folder contains the 115% models with 5mm LEDs.  For model parts not included in this folder, load the "Model/Original" version in slicer and scale up 115%*
+
 
 **Changes Currently Being Considered for Prototype #2**
 
@@ -34,6 +38,7 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 - Integrate rotary encoder plus menu system to control audio, EMF sensitivity, scan rate, etc.
 - LED animation - *Example: Have them scan top to bottom slowly and get faster depending on signal strength*
 - Add external USB port for charging and/or Arduino programming
+- Considering alternative power source with smaller footprint
 
 ## Old Updates ##
 **6/3/20** - Have all main components working via script and am printing revised case so all components fit correctly. Just updated the Fritzing diagram as well as Arduino IDE script in repo.  Will upload STLs for case once finished, assembled, and tested.  Also decided to replace pair of buttons with a rotary encoder with push-button for more flexibility.  Pending tasks are below:
@@ -64,7 +69,7 @@ Will post full build guide and files once finished.
 - Wiring
 - Custom PCB *(Optional - Will post if one is made)*
 
-***Build guide will be updated in detail after finishing 2nd prototype***
+***The build guide will be updated in detail after finishing 2nd prototype***
 
 ## Credit ##
 This project is inspired by CountDeMonet's [Arduino_PKE_Meter](https://github.com/CountDeMonet/Arduino_PKE_Meter) which includes an OLED and LED wings, however was designed as a toy as all feedback is pre-programmed to occur with button presses and does not include sensors.
