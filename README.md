@@ -22,6 +22,8 @@ Included *(& below)* is the initial breadboard layout which I'm currently testin
 	- Misc smaller improvements & cleanup
 	- Main thing lacking is OLED menu to configure sound, EMF sensitivity, etc.
 
+***Note:** I've found that all the internal components interfere a bit with the EMF reader.  The best solution I've found so far is to wrap the ground wire, resistors, & wire going to A0 in aluminum foil then cover with heat shrink tubing - just until it gets outside unit.  Will document more when build guide updated.*
+
 ## Old Updates ##
 **10/20/20** - Finished prototype #1.  Didn't have time to get everything working the way I wanted, so finished it without a couple of features and with a couple of modifications so i could finish testing.  Below are lists of modifications made to finish first prototype plus changes planned for prototype #2 after testing...
 
