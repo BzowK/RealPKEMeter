@@ -12,8 +12,18 @@ The goal of this project is to create a "working" PKE Meter (Ghostbusters) which
 Included *(& below)* is the initial breadboard layout which I'm currently testing.  The only addition I'm currently considering is a rocker switch to adjust sensitivity, however may try to add that via OLED screen.
 ![](https://github.com/BzowK/RealPKEMeter/blob/master/Fritzing/Real-PKE-Meter_bb.png)
 
-## Current Status - 10/29/20 ##
-Finished prototype #1.  Didn't have time to get everything working the way I wanted, so finished it without a couple of features and with a couple of modifications so i could finish testing.  Below are lists of modifications made to finish first prototype plus changes planned for prototype #2 after testing...
+## Current Status - 2/6/21 ##
+- Cleaned up models a bit and added space for switch at bottom of handle
+- Updated code so that...
+	- EMF is much more accurate
+	- LED now triggers via port directly thus freeing resources and making EMF readings more accurate
+	- LED animation now similar to original PKE Meter from movie & flashes faster the higher the wings rise (higher field detected)
+	- Rotary encoder code added
+	- Misc smaller improvements & cleanup
+	- Main thing lacking is OLED menu to configure sound, EMF sensitivity, etc.
+
+## Old Updates ##
+**10/20/20** - Finished prototype #1.  Didn't have time to get everything working the way I wanted, so finished it without a couple of features and with a couple of modifications so i could finish testing.  Below are lists of modifications made to finish first prototype plus changes planned for prototype #2 after testing...
 
 **1st Prototype Modifications**
 
@@ -41,7 +51,6 @@ Finished prototype #1.  Didn't have time to get everything working the way I wan
 - Considering alternative power source with smaller footprint
 - Clean up & fine-tune model for proper hardware mounting, switches, etc.
 
-## Old Updates ##
 **6/3/20** - Have all main components working via script and am printing revised case so all components fit correctly. Just updated the Fritzing diagram as well as Arduino IDE script in repo.  Will upload STLs for case once finished, assembled, and tested.  Also decided to replace pair of buttons with a rotary encoder with push-button for more flexibility.  Pending tasks are below:
 
 - Fine-tune EMF detection in script
